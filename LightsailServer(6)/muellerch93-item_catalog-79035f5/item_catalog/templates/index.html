@@ -1,0 +1,39 @@
+{% extends 'base.html' %} {% block content %}
+<div class="container white-container" role="main">
+    <div class="row">
+        <div class="col-md-4 right-border">
+            <h2>Categories</h2>
+            <ul>
+                {% for category in categories %}
+                <a href={{ url_for( 'show_items_view', category_name = category.name)}}>{{category.name}}</a></br>
+                {% endfor %}
+                <hr>
+                <a href={{ url_for( 'index' )}}>Show latest items</a>
+            </ul>
+        </div>
+
+        {% if selectedCategory is defined %}
+        <div class="col-md-6 col-md-offset-1">
+            {% if logged_in %}
+            <h3><a href={{ url_for( 'add_item' )}}>Add Item</a></h3>
+            {% endif %}
+            <h2>{{selectedCategory.name}} items ({{selectedCategory.item_count}} items)</h2>
+            {% for item in items %}
+            <a href={{ url_for( 'show_item_description', category_name = selectedCategory.name, item_id= item.id )}}>{{item.name}}</a></br>
+            {% endfor %}
+        </div>
+        {% else %}
+        <div class="col-md-6 col-md-offset-1">
+            {% if logged_in %}
+            <h3><a href={{ url_for( 'add_item' )}}>Add Item</a></h3>
+            {% endif %}
+            <h2>Latest items</h2>
+            {% for item in items %}
+            <a href={{ url_for( 'show_item_description', category_name = item.category.name, item_id = item.id )}}>{{item.name}}</a> ({{item.category.name}})
+            </br>
+            {% endfor %}
+        </div>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}

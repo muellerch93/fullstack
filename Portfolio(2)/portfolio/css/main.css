@@ -1,0 +1,68 @@
+body,
+html {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    font-size: 12px;
+}
+
+main {
+    padding-top: 20px;
+}
+
+aside {
+    padding-top: 20px;
+}
+
+.block {
+    height: 64px;
+    width: 64px;
+}
+
+.orange {
+    background-color: #FF5722;
+}
+
+.cyan {
+    background-color: #00BCD4;
+}
+
+.brown {
+    background-color: #795548;
+}
+
+.gray {
+    color: #9E9E9E;
+}
+
+.img-responsive {
+    height: auto;
+    max-width: 100%;
+}
+
+.header-logo {
+    height: 128px;
+    margin-right: 1em;
+    vertical-align: top;
+    margin-top: 12px;
+}
+
+.line-thick {
+    height: 5px;
+    background-color: #7d97ad;
+}
+
+.col-margin {
+    margin-bottom: 20px;
+}
+
+.center {
+    text-align: center;
+}
+
+.right {
+    text-align: right;
+}
